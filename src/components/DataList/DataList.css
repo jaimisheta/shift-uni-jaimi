@@ -1,0 +1,23 @@
+@tailwind components;
+
+@layer components {
+  .table {
+    @apply min-w-full divide-y divide-gray-700 table-auto;
+  }
+  .table-head {
+    @apply bg-gray-700;
+  }
+  .table-header {
+    @apply py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-400 uppercase;
+  }
+
+  .table-body {
+    @apply bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700;
+  }
+  .table-row {
+    @apply hover:bg-gray-700;
+  }
+  .table-data {
+    @apply py-4 px-6 text-sm font-medium text-white whitespace-nowrap;
+  }
+}
