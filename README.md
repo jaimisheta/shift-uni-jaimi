@@ -61,13 +61,15 @@ This web application allows users to search for universities based on country an
 
 1. Open the Docker Desktop
 
-2. Build the Docker image on:
+2. Open the terminal
+
+3. Build the Docker image on:
 
 ```bash
    docker build -t jaimisheta1999/shift-uni-jaimi .
 ```
 
-3. Run the Docker container:
+4. Run the Docker container:
 
 ```bash
    docker run -p 3000:3000 jaimisheta1999/shift-uni-jaimi
@@ -91,7 +93,7 @@ This web application allows users to search for universities based on country an
 
 4. Open your browser and visit `http://localhost:3000` to view the application.
 
-## Usage
+## How to Use?
 
 - On the home page, select a country from the dropdown menu and/or enter a university name in the search box. Results will be displayed in a table.
 - Click the "Add to Favourite" button to add a university to your favorites.
