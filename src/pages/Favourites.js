@@ -30,21 +30,29 @@ function Favourites() {
       </div>
 
       <DataList>
-        {filteredData.map((item, index) => (
-          <tr key={index} className="table-row">
-            <td className="table-data ">{item.name || "N/A"}</td>
-            <td className="table-data ">{item["state-province"] || "N/A"}</td>
-            <td className="table-data ">{`${item.web_pages[0] || "N/A"}`}</td>
-            <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-              <button
-                onClick={() => dispatch(removeFromfavouritemList(item))}
-                className="text-red-400 bg-transparent "
-              >
-                Remove
-              </button>
+        {filteredData.length > 0 ? (
+          filteredData.map((item, index) => (
+            <tr key={index} className="table-row">
+              <td className="table-data ">{item.name || "N/A"}</td>
+              <td className="table-data ">{item["state-province"] || "N/A"}</td>
+              <td className="table-data ">{`${item.web_pages[0] || "N/A"}`}</td>
+              <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                <button
+                  onClick={() => dispatch(removeFromfavouritemList(item))}
+                  className="text-red-400 bg-transparent "
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr className="table-row ">
+            <td colSpan={4} className="table-data text-center">
+              No Favourite Data Available
             </td>
           </tr>
-        ))}
+        )}
       </DataList>
     </main>
   );
