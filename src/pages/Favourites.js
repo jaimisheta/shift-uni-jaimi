@@ -24,7 +24,7 @@ function Favourites() {
         <TextField
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder={"search"}
+          placeholder={"University search ..."}
         />
         <Button onClick={() => setSearch("")}>Clear</Button>
       </div>
@@ -32,9 +32,9 @@ function Favourites() {
       <DataList>
         {filteredData.map((item, index) => (
           <tr key={index} className="table-row">
-            <td className="table-data ">{item.name}</td>
-            <td className="table-data ">{`${item.country}/${item["state-province"]}`}</td>
-            <td className="table-data ">{`${item.web_pages[0] || ""}`}</td>
+            <td className="table-data ">{item.name || "N/A"}</td>
+            <td className="table-data ">{item["state-province"] || "N/A"}</td>
+            <td className="table-data ">{`${item.web_pages[0] || "N/A"}`}</td>
             <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
               <button
                 onClick={() => dispatch(removeFromfavouritemList(item))}
