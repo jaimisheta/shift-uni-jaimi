@@ -117,8 +117,14 @@ function App() {
               </thead>
               <tbody className="table-body overflow-y-scroll !height-[50vh]">
                 <tr className="table-row hover:!bg-gray-800">
-                  <td className="table-data ">{apiDetails.statusCode}</td>
-                  <td className="table-data ">{`${apiDetails.responseTime} ms`}</td>
+                  <td className="table-data ">
+                    {apiDetails.statusCode || "N/A"}
+                  </td>
+                  <td className="table-data ">
+                    {apiDetails.responseTime
+                      ? `${apiDetails.responseTime} ms`
+                      : "N/A"}
+                  </td>
                 </tr>
               </tbody>
             </table>
