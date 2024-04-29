@@ -26,8 +26,12 @@ function App() {
 
   const getCountries = useCallback(async () => {
     try {
-      const res = await axios.get(`https://restcountries.com/v2/all`);
-      setCountryList(res.data.map((country) => country.name));
+      const res = await axios.get(`http://universities.hipolabs.com/search`);
+      const countries = res.data.map((item) => item.country);
+      const uniqueCountries = countries
+        .filter((country, index) => countries.indexOf(country) === index)
+        .sort((a, b) => a.localeCompare(b));
+      setCountryList(uniqueCountries);
     } catch (error) {
       console.log(error);
     }
